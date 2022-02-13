@@ -1,6 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Todo } from "./Todo";
+import { User } from "./types/user";
+import { UserProfile } from "./UserProfile";
+
+const user: User = {
+  name: "gyoku",
+  hobbies: ["game", "reading books", "movies"],
+};
 
 function App() {
   type TodoType = {
@@ -21,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      <UserProfile user={user}></UserProfile>
       <button onClick={onClickFetchData}>データ取得</button>
       {todos.map((todo: TodoType) => {
         return (
